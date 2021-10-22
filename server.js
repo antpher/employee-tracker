@@ -32,3 +32,26 @@ const promptUser = () => {
         }
     });
 }
+
+const viewAllDepartments = () => {
+    db.query('SELECT * FROM department', function (err, results) {
+        if (err) throw err
+        console.table(results);
+        promptUser();
+    })
+}
+
+const viewAllRoles = () => {
+    db.query('SELECT * FROM role', function (err, results) {
+        if (err) throw err
+        console.table(results);
+        promptUser();
+    })
+}
+
+const viewAllEmployees = () => {
+    db.query('SELECT * FROM employee', function (err, results) {
+        if (err) throw err
+        console.table(results);
+        promptUser();
+    })
